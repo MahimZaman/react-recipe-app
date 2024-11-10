@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function MealItem({ title, thumbnail, mealId }) {
   return (
-    <Link to={`/recipe/${mealId}`} className="text-decoration-none d-flex">
+    <Link to={`/react-recipe-app/recipe/${mealId}`} className="text-decoration-none d-flex">
       <div
         className="card bg-dark text-light"
         style={{

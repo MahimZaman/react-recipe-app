@@ -17,7 +17,7 @@ function MealDetails() {
         return;
       }
 
-      setDetail(data.meals);
+      setDetail(data.meals[0]);
     } catch (err) {
       console.error(err);
     }
@@ -25,6 +25,7 @@ function MealDetails() {
 
   useEffect(() => {
     getDetail();
+    console.log(detail);
   }, []);
 
   return (
@@ -33,174 +34,39 @@ function MealDetails() {
         <div className="col-lg-6">
           <img
             className="img-fluid rounded-4"
-            src="https://www.themealdb.com/images/media/meals/020z181619788503.jpg"
+            src={detail.strMealThumb}
             alt=""
           />
         </div>
         <div className="col-lg-6">
-          <h1>Ayam Percik"</h1>
+          <h1>{detail.strMeal}</h1>
           <div>
-            <strong>Category:</strong> Chicken
+            <strong>Category:</strong> {detail.strCategory}
           </div>
           <div>
-            <strong>Area:</strong> Malaysian
+            <strong>Area:</strong> {detail.strArea}
           </div>
           <table className="table table-striped table-dark my-4">
             <tbody>
-              <tr>
-                <th>Chicken Thighs</th>
-                <td>6</td>
-              </tr>
-              <tr>
-                <th>Chicken Thighs</th>
-                <td>6</td>
-              </tr>
-              <tr>
-                <th>Chicken Thighs</th>
-                <td>6</td>
-              </tr>
-              <tr>
-                <th>Chicken Thighs</th>
-                <td>6</td>
-              </tr>
+              {[...Array(20)].map((_, i) => {
+                if (detail["strMeasure" + i]) {
+                  return (
+                    <tr key={i}>
+                      <th>{detail["strIngredient" + i]}</th>
+                      <td>{detail["strMeasure" + i]}</td>
+                    </tr>
+                  );
+                }
+              })}
             </tbody>
           </table>
         </div>
       </div>
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-lg-12">
-          <div className="tabs">
-            <div className="single-tabs tabs-two">
-              <ul className="nav nav-justified" id="myTab" role="tablist">
-                <li className="nav-item">
-                  <a
-                    className="active"
-                    id="tab-two-one-tab"
-                    data-bs-toggle="tab"
-                    href="#tab-two-one"
-                    role="tab"
-                    aria-controls="tab-two-one"
-                    aria-selected="true"
-                  >
-                    TAB 01
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    id="tab-two-two-tab"
-                    data-bs-toggle="tab"
-                    href="#tab-two-two"
-                    role="tab"
-                    aria-controls="tab-two-two"
-                    aria-selected="false"
-                  >
-                    TAB 02
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    id="tab-two-three-tab"
-                    data-bs-toggle="tab"
-                    href="#tab-two-three"
-                    role="tab"
-                    aria-controls="tab-two-three"
-                    aria-selected="false"
-                  >
-                    TAB 03
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    id="tab-two-four-tab"
-                    data-bs-toggle="tab"
-                    href="#tab-two-four"
-                    role="tab"
-                    aria-controls="tab-two-four"
-                    aria-selected="false"
-                  >
-                    TAB 04
-                  </a>
-                </li>
-              </ul>
-              <div className="tab-content" id="myTabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="tab-two-one"
-                  role="tabpanel"
-                  aria-labelledby="tab-two-one-tab"
-                >
-                  <div className="tab-text">
-                    <p className="text">
-                      Raw denim you probably haven’t heard of them jean shorts
-                      Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                      cleanse. Mustache cliche tempor, williamsburg carles vegan
-                      helvetica. Reprehenderit butcher retro keffiyeh
-                      dreamcatcher synth. <br />
-                      <br />
-                      Cosby sweater eu banh mi, qui irure terry richardson ex
-                      squid. Aliquip placeat salvia cillum iphone. Seitan
-                      aliquip quis cardigan american apparel, butcher voluptate
-                      nisi qui.
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="tab-pane fade"
-                  id="tab-two-two"
-                  role="tabpanel"
-                  aria-labelledby="tab-two-two-tab"
-                >
-                  <div className="tab-text">
-                    <p className="text">
-                      ge
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="tab-pane fade"
-                  id="tab-two-three"
-                  role="tabpanel"
-                  aria-labelledby="tab-two-three-tab"
-                >
-                  <div className="tab-text">
-                    <p className="text">
-                      Raw denim you probably haven’t heard of them jean shorts
-                      Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                      cleanse. Mustache cliche tempor, williamsburg carles vegan
-                      helvetica. Reprehenderit butcher retro keffiyeh
-                      dreamcatcher synth. <br />
-                      <br />
-                      Cosby sweater eu banh mi, qui irure terry richardson ex
-                      squid. Aliquip placeat salvia cillum iphone. Seitan
-                      aliquip quis cardigan american apparel, butcher voluptate
-                      nisi qui.
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="tab-pane fade"
-                  id="tab-two-four"
-                  role="tabpanel"
-                  aria-labelledby="tab-two-four-tab"
-                >
-                  <div className="tab-text">
-                    <p className="text">
-                      Raw denim you probably haven’t heard of them jean shorts
-                      Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                      cleanse. Mustache cliche tempor, williamsburg carles vegan
-                      helvetica. Reprehenderit butcher retro keffiyeh
-                      dreamcatcher synth. <br />
-                      <br />
-                      Cosby sweater eu banh mi, qui irure terry richardson ex
-                      squid. Aliquip placeat salvia cillum iphone. Seitan
-                      aliquip quis cardigan american apparel, butcher voluptate
-                      nisi qui.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h1>Description</h1>
+          <hr />
+          <article className="mb-5">{detail.strInstructions}</article>
         </div>
       </div>
     </div>
