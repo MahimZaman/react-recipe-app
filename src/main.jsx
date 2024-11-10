@@ -10,19 +10,19 @@ import MealDetails from "./routes/MealDetails.jsx";
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-recipe-app",
     element: <App />,
     errorElement: <Error404 />,
     children: [
       {
-        path: "/categories/:catId",
+        path: "/react-recipe-app/categories/:catId",
         element: <Meals />,
         loader: ({ params }) => {
           return params;
         },
       },
       {
-        path: "/recipe/:mealId",
+        path: "/react-recipe-app/recipe/:mealId",
         element: <MealDetails />,
         loader: ({ params }) => {
           return params;

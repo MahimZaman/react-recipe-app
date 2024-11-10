@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CategoryItem({ title, thumbnail, desc }) {
   return (
     <li className="nav-item py-1 px-3 rounded-3">
-      <Link className="nav-link active d-flex align-items-center gap-2" to={`/categories/${title.toLowerCase().replace(' ', '-')}`} data-bs-toggle="tooltip" data-bs-title={title} >
+      <Link className="nav-link active d-flex align-items-center gap-2" to={`/react-recipe-app/categories/${title.toLowerCase().replace(' ', '-')}`} data-bs-toggle="tooltip" data-bs-title={title} >
         <img src={thumbnail} className="w-25 object-fit-contain" alt={title} />
         <div>
           <h3
