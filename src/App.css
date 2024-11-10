@@ -1,0 +1,100 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+.sidebar {
+  min-height: 100vh;
+  padding: 1rem;
+}
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  display: block;
+}
+.main-content {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* tabs-two */
+.tabs-two {
+  border: 1px solid var(--gray-4);
+}
+@media (max-width: 767px) {
+  .tabs-two .nav {
+    display: block;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .tabs-two .nav {
+    display: flex;
+  }
+}
+.tabs-two .nav .nav-item a {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--dark-3);
+  font-weight: 700;
+  padding: 13px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  display: block;
+  border-bottom: 1px solid var(--gray-4);
+  position: relative;
+}
+.tabs-two .nav .nav-item a.active {
+  color: var(--primary);
+  background: var(--primary-light);
+  border: 1px solid var(--gray-4);
+  border-bottom: 0;
+  border-top: 0;
+}
+@media (max-width: 767px) {
+  .tabs-two .nav .nav-item a.active {
+    border: 1px solid var(--gray-4);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .tabs-two .nav .nav-item a.active {
+    border: 1px solid var(--gray-4);
+    border-bottom: 0;
+    border-top: 0;
+  }
+}
+.tabs-two .nav .nav-item a.active::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  background: var(--primary);
+}
+.tabs-two .nav .nav-item:first-child a.active {
+  border-left: 0;
+}
+.tabs-two .nav .nav-item:last-child a.active {
+  border-right: 0;
+}
+.tabs-two .tab-content .tab-text {
+  padding: 15px;
+}
+.tabs-two .tab-content .tab-text .text {
+  color: var(--dark-3);
+}
+
+.nav-item{
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover{
+  background: #121212; 
+}
